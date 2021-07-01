@@ -17,19 +17,20 @@ const items = (() => {
         constructor (name, description) {
             this.name = name
             this.description = description
+            this.array = []
         }
 
-        list() {
-            myList = []
-            myList.push(item)
-            console.log(myList)
+        list(item) {
+            this.array.push(item)
+            console.log(this.array)
         }
 
         addToList(title, description, dueDate, priority) {
             let todo = new todoItem (title, description, dueDate, priority)
-            list(todo)
-        }     
+            this.list(todo)
+        }
     }
+    
     function addProject (name, description) {
         let projects = new project (name, description)
         console.log(projects)
