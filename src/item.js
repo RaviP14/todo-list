@@ -8,9 +8,12 @@ const items = (() => {
         }
     }
 
+    let arrInbox = []
+
     function addTodo (title, description, dueDate, priority) {
         let todo = new todoItem (title, description, dueDate, priority)
         console.log(todo)
+        inbox.push(todo)
     }
     
     class project {
@@ -30,15 +33,20 @@ const items = (() => {
             this.list(todo)
         }
     }
-    
+    let arrProjects = []
+
     function addProject (name, description) {
         let projects = new project (name, description)
         console.log(projects)
+        arrProjects.push(projects)
     }
+
     return {
         addTodo,
-        addProject
+        addProject,
+        arrInbox,
+        arrProjects
     }
 })();
-/* check for proper way to add array to factory function*/
+/* need to delete items inside arrays once completed or deleted*/
 export { items }
