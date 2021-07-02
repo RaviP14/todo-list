@@ -13,7 +13,12 @@ const items = (() => {
     function addTodo (title, description, dueDate, priority) {
         let todo = new todoItem (title, description, dueDate, priority)
         console.log(todo)
-        inbox.push(todo)
+        arrInbox.push(todo)
+    }
+
+    function deleteTodo (n) {
+        arrInbox.splice(n, 1)
+        console.log(arrInbox)
     }
     
     class project {
@@ -32,6 +37,11 @@ const items = (() => {
             let todo = new todoItem (title, description, dueDate, priority)
             this.list(todo)
         }
+
+        deleteFromList(n) {
+            this.array.splice(n, 1)
+            console.log(this.array)
+        }
     }
     let arrProjects = []
 
@@ -41,12 +51,20 @@ const items = (() => {
         arrProjects.push(projects)
     }
 
+    function deleteProject(n) {
+        arrProjects.splice(n, 1)
+        console.log(arrProjects)
+    }
+
     return {
         addTodo,
+        deleteTodo,
         addProject,
+        deleteProject,
         arrInbox,
         arrProjects
     }
 })();
-/* need to delete items inside arrays once completed or deleted*/
+/* n will be assigned to a complete & delete button on each todo 
+& delete project button will delete the project - like library.*/
 export { items }
