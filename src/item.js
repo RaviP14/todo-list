@@ -14,6 +14,7 @@ const items = (() => {
         let todo = new todoItem (title, description, dueDate, priority)
         console.log(todo)
         arrInbox.push(todo)
+        console.log(arrInbox)
     }
 
     function deleteTodo (n) {

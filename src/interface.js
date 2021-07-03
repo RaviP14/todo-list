@@ -11,6 +11,15 @@ const domElements = (() => {
     let btnAddTodo = document.createElement('button');
     btnAddTodo.textContent = 'Add Task';
     mainDiv.appendChild(btnAddTodo);
+
+    let tableTodo = document.createElement('table');
+    tableTodo.className = 'tableTodo';
+    mainDiv.appendChild(tableTodo);
+
+    return {
+        tableTodo,
+        btnAddTodo
+    }
 })();
 
 export { domElements }
