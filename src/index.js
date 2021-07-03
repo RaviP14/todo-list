@@ -1,4 +1,5 @@
 import { items } from './item'
+import{ domElements } from './interface'
 /*items.addProject('hello','square')
 items.arrProjects[0].addToList('hello','sammy','11','low')
 console.log(items.arrProjects[0].array) */
