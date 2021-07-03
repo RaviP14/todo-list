@@ -1,17 +1,17 @@
 const items = (() => {
     class todoItem {
-        constructor(title, description, dueDate, priority) {
+        constructor(title, dueDate, priority, description) {
             this.title = title
-            this.description = description
             this.dueDate = dueDate
             this.priority = priority
+            this.description = description
         }
     }
 
     let arrInbox = []
 
-    function addTodo (title, description, dueDate, priority) {
-        let todo = new todoItem (title, description, dueDate, priority)
+    function addTodo (title, dueDate, priority, description) {
+        let todo = new todoItem (title, dueDate, priority, description)
         console.log(todo)
         arrInbox.push(todo)
         console.log(arrInbox)

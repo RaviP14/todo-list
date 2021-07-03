@@ -6,7 +6,7 @@ items.arrProjects[0].addToList('hello','sammy','11','low')
 console.log(items.arrProjects[0].array) */
 
 domElements.btnAddTodo.addEventListener('click', () => {
-    items.addTodo('Clean','tidy room','11/07','low') //replace with form
+    domElements.buildFormTodo() //replace with form
     currentTodo.newTodo();
 })
 
