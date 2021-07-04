@@ -6,9 +6,11 @@ items.arrProjects[0].addToList('hello','sammy','11','low')
 console.log(items.arrProjects[0].array) */
 
 domElements.btnAddTodo.addEventListener('click', () => {
-    domElements.buildFormTodo() //replace with form
-    currentTodo.newTodo();
+    if (domElements.formTodo.length === 0) {
+        domElements.buildFormTodo() //replace with form
+    } else if (domElements.formDiv.style.display === 'none') {
+        domElements.formDiv.style.display = 'block'
+    }
 })
-
 /* access each project todo array example items.arrProjects[0].array */
 console.log('todo')

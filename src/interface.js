@@ -1,3 +1,6 @@
+import { items } from "./item";
+import { currentTodo } from "./list";
+
 const domElements = (() => {
     let body = document.querySelector('body');
     let mainDiv = document.createElement('div');
@@ -18,6 +21,7 @@ const domElements = (() => {
 
     let formDiv = document.createElement('div');
     formDiv.className = 'formDiv';
+    formDiv.style.display = 'block';
     mainDiv.appendChild(formDiv)
 
     let formTodo = document.createElement('form');
@@ -75,9 +79,31 @@ const domElements = (() => {
         submit.textContent = 'Submit';
         formTodo.appendChild(submit);
         /* need to retrieve data from input & run new todo */
-    }
 
+        submit.addEventListener('click', (e) => {
+            if (inputTitle.value !== '' && inputDate !== '') {
+                let input1 = inputTitle.value.slice();
+                let input2 = inputDate.value.slice();
+                let input3 = selectPriorirty.value.slice();
+                let input4 = inputDescription.value.slice();
+                items.addTodo(input1, input2, input3, input4);
+                e.preventDefault();
+                formTodo.reset();
+                formDiv.style.display = 'none';
+                currentTodo.newTodo()
+            }
+        })
+
+        exit.addEventListener('click', (e) => {
+            e.preventDefault();
+            formTodo.reset();
+            formDiv.style.display = 'none';
+        })
+    }
+    
     return {
+        formDiv,
+        formTodo,
         tableTodo,
         btnAddTodo,
         buildFormTodo

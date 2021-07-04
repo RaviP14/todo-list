@@ -34,8 +34,8 @@ const items = (() => {
             console.log(this.array)
         }
 
-        addToList(title, description, dueDate, priority) {
-            let todo = new todoItem (title, description, dueDate, priority)
+        addToList(title, dueDate, priority,description) {
+            let todo = new todoItem (title, dueDate, priority, description)
             this.list(todo)
         }
 
