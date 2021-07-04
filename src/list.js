@@ -2,21 +2,21 @@ import { domElements } from "./interface";
 import { items } from "./item";
 
 const currentTodo = (() => {
-    
-    function newTodo () {
-        for (let i = domElements.tableTodo.rows.length; i < items.arrInbox.length; i++) {
-            let row = domElements.tableTodo.insertRow(i)
+    //add desired table & array to add new todo
+    function newTodo (element, array) {
+        for (let i = element.rows.length; i < array.length; i++) {
+            let row = element.insertRow(i)
             row.setAttribute('data-key', i)
-            for (let j = 0; j < Object.keys(items.arrInbox[i]).length - 1; j++) {
+            for (let j = 0; j < Object.keys(array[i]).length - 1; j++) {
                 let val = row.insertCell()
-                val.textContent = Object.values(items.arrInbox[i])[j];
+                val.textContent = Object.values(array[i])[j];
             }
 
             let infoBtn = document.createElement('button');
             infoBtn.textContent = 'i'
 
             let info = document.createElement('span');
-            info.textContent = items.arrInbox[i].description 
+            info.textContent = array[i].description 
             info.style.display = 'none'
 
             let val3 = row.insertCell();
@@ -34,8 +34,13 @@ const currentTodo = (() => {
             let val2 = row.insertCell()
             val2.appendChild(completeBtn)
             completeBtn.addEventListener('click', () => {
-                items.deleteTodo(i);
-                domElements.tableTodo.deleteRow(i);
+                if (array.length === 1 && array === items.arrInbox) {
+                    items.deleteTodo(0);
+                    element.deleteRow(0);
+                } else if (array === items.arrInbox){
+                    items.deleteTodo(i);
+                    element.deleteRow(i);
+                } //duplicate these with project versions.
             })
         }
     }

@@ -114,7 +114,7 @@ const domElements = (() => {
                 e.preventDefault();
                 formTodo.reset();
                 formDiv.style.display = 'none';
-                currentTodo.newTodo()
+                currentTodo.newTodo(domElements.tableTodo, items.arrInbox)
             }
         })
 
