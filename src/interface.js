@@ -11,6 +11,30 @@ const domElements = (() => {
     sidebar.className = 'sidebar';
     mainDiv.appendChild(sidebar);
 
+    let inboxBtn = document.createElement('button');
+    inboxBtn.className = 'inboxBtn';
+    inboxBtn.textContent = 'Inbox';
+    sidebar.appendChild(inboxBtn);
+
+    let todayBtn = document.createElement('button');
+    todayBtn.className = 'todayBtn';
+    todayBtn.textContent = 'Today'
+    sidebar.appendChild(todayBtn);
+
+    let thisWeekBtn = document.createElement('button');
+    thisWeekBtn.className = 'thisWeekBtn'
+    thisWeekBtn.textContent = 'This Week'
+    sidebar.appendChild(thisWeekBtn);
+
+    let projectTitle = document.createElement('p');
+    projectTitle.textContent = 'Projects';
+    sidebar.appendChild(projectTitle);
+
+
+    let btnAddProject = document.createElement('button');
+    btnAddProject.textContent = 'Add Project'
+    sidebar.appendChild(btnAddProject);
+
     let btnAddTodo = document.createElement('button');
     btnAddTodo.textContent = 'Add Task';
     mainDiv.appendChild(btnAddTodo);
