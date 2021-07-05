@@ -12,5 +12,13 @@ domElements.btnAddTodo.addEventListener('click', () => {
         domElements.formDiv.style.display = 'block'
     }
 })
+
+domElements.btnAddProject.addEventListener('click', () => {
+    if (domElements.projectForm.length === 0) {
+        domElements.buildFormProject()
+    } else if (domElements.projectFormDiv.style.display === 'none') {
+        domElements.projectFormDiv.style.display = 'block'
+    }
+})
 /* access each project todo array example items.arrProjects[0].array */
 console.log('todo')

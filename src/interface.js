@@ -30,6 +30,9 @@ const domElements = (() => {
     projectTitle.textContent = 'Projects';
     sidebar.appendChild(projectTitle);
 
+    let tableProject = document.createElement('table');
+    tableProject.className = 'tableprojects'
+    sidebar.appendChild(tableProject)
 
     let btnAddProject = document.createElement('button');
     btnAddProject.textContent = 'Add Project'
@@ -124,13 +127,72 @@ const domElements = (() => {
             formDiv.style.display = 'none';
         })
     }
+
+    let projectFormDiv = document.createElement('div');
+    projectFormDiv.className = 'projectFormDiv';
+    projectFormDiv.style.display = 'block';
+    sidebar.appendChild(projectFormDiv);
+
+    let projectForm = document.createElement('form');
+    projectFormDiv.appendChild(projectForm);
+
+    function buildFormProject() {
+        let projectTitle = document.createElement('p');
+        projectTitle.textContent = 'Title:'
+        projectForm.appendChild(projectTitle);
+
+        let inputProjectTitle = document.createElement('input');
+        inputProjectTitle.autocomplete = 'off'
+        projectForm.appendChild(inputProjectTitle);
+
+        let projectDescription = document.createElement('p');
+        projectDescription.textContent ='Description:'
+        projectForm.appendChild(projectDescription);
+
+        let inputProjectDescription = document.createElement('input');
+        inputProjectDescription.autocomplete = 'off';
+        projectForm.appendChild(inputProjectDescription);
+
+        let cancel = document.createElement('button');
+        cancel.className = 'Cancel';
+        cancel.textContent = 'Cancel';
+        projectForm.appendChild(cancel);
+
+        let submitProject = document.createElement('button');
+        submitProject.className = 'submitForm';
+        submitProject.textContent = 'Submit';
+        projectForm.appendChild(submitProject);
+
+        cancel.addEventListener('click', (e) => {
+            e.preventDefault();
+            projectForm.reset();
+            projectFormDiv.style.display = 'none';
+        })
+
+        submitProject.addEventListener('click', (e) => {
+            if (inputProjectTitle.value !== '' && inputProjectDescription.value !== '') {
+                let input1 = inputProjectTitle.value.slice();
+                let input2 = inputProjectDescription.value.slice();
+                items.addProject(input1, input2)
+                e.preventDefault();
+                projectForm.reset();
+                projectFormDiv.style.display = 'none';
+                currentTodo.newProject(domElements.tableProject, items.arrProjects)
+            }
+        })
+    }
     
     return {
         formDiv,
         formTodo,
         tableTodo,
         btnAddTodo,
-        buildFormTodo
+        buildFormTodo,
+        btnAddProject,
+        buildFormProject,
+        tableProject,
+        projectFormDiv,
+        projectForm
     }
 })();
 
