@@ -23,7 +23,7 @@ const items = (() => {
         console.log(arrInbox)
     }
 
-    let arrProject = ['']
+    let arrProject = ['Inbox']
 
     function addProject (project) {
         arrProject.push(project);

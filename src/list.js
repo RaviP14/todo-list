@@ -44,10 +44,11 @@ const currentTodo = (() => {
             })
         }
     }
-    
+
     function newProject (element, array) {
-        for (let i = element.rows.length; i < array.length; i++) {
-            let row = element.insertRow(i)
+        for (let i = element.rows.length + 1; i < array.length; i++) {
+            console.log(i)
+            let row = element.insertRow(i -1)
             row.setAttribute('data-key', i)
     
             let val = row.insertCell()
@@ -65,7 +66,7 @@ const currentTodo = (() => {
                     element.deleteRow(0);
                 } else if (array === items.arrProject) {
                     items.deleteProject(i);
-                    element.deleteRow(i);
+                    element.deleteRow(i - 1);
                 }
             })
             // need to skip 1 = 0 or items.arrProject[0]
