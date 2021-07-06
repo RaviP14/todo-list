@@ -54,7 +54,7 @@ const domElements = (() => {
     let formTodo = document.createElement('form');
     formDiv.appendChild(formTodo);
 
-    function buildFormTodo () {
+    function buildFormTodo (tables, arrays) {
         let exit = document.createElement('button');
         exit.className = 'exitForm';
         exit.textContent = 'X';
@@ -100,12 +100,26 @@ const domElements = (() => {
         }
 
         formTodo.appendChild(selectPriorirty);
+        
+        let nameChooseProject = document.createElement('p');
+        nameChooseProject.textContent = 'Choose Project';
+        formTodo.appendChild(nameChooseProject);
+
+        let chooseProject = document.createElement('select');
+
+        for (let j =  0; j < items.arrProject.length; j++) {
+            let option = document.createElement('option');
+            option.value = items.arrProject[j];
+            option.textContent = items.arrProject[j];
+            chooseProject.appendChild(option);
+        }
+
+        formTodo.appendChild(chooseProject);
 
         let submit = document.createElement('button');
         submit.className = 'submitForm';
         submit.textContent = 'Submit';
         formTodo.appendChild(submit);
-        /* need to retrieve data from input & run new todo */
 
         submit.addEventListener('click', (e) => {
             if (inputTitle.value !== '' && inputDate !== '') {
@@ -113,13 +127,19 @@ const domElements = (() => {
                 let input2 = inputDate.value.slice();
                 let input3 = selectPriorirty.value.slice();
                 let input4 = inputDescription.value.slice();
-                items.addTodo(input1, input2, input3, input4);
-                e.preventDefault();
-                formTodo.reset();
-                formDiv.style.display = 'none';
-                currentTodo.newTodo(domElements.tableTodo, items.arrInbox)
+                let input5 = chooseProject.value.slice();
+                console.log(chooseProject.value)
+                if (arrays = items.arrInbox) {
+                    items.addTodo(input1, input2, input3, input4, input5);
+                    e.preventDefault();
+                    formTodo.reset();
+                    formDiv.style.display = 'none';
+                    currentTodo.newTodo(tables, arrays)
+                } 
             }
-        })
+        }) /* Projects aren't added on once form is built,
+        need to delete & rebuild form everytime project is added & deleted
+        check restaurant page. */ 
 
         exit.addEventListener('click', (e) => {
             e.preventDefault();
@@ -145,14 +165,6 @@ const domElements = (() => {
         inputProjectTitle.autocomplete = 'off'
         projectForm.appendChild(inputProjectTitle);
 
-        let projectDescription = document.createElement('p');
-        projectDescription.textContent ='Description:'
-        projectForm.appendChild(projectDescription);
-
-        let inputProjectDescription = document.createElement('input');
-        inputProjectDescription.autocomplete = 'off';
-        projectForm.appendChild(inputProjectDescription);
-
         let cancel = document.createElement('button');
         cancel.className = 'Cancel';
         cancel.textContent = 'Cancel';
@@ -170,14 +182,13 @@ const domElements = (() => {
         })
 
         submitProject.addEventListener('click', (e) => {
-            if (inputProjectTitle.value !== '' && inputProjectDescription.value !== '') {
+            if (inputProjectTitle.value !== '') {
                 let input1 = inputProjectTitle.value.slice();
-                let input2 = inputProjectDescription.value.slice();
-                items.addProject(input1, input2)
+                items.addProject(input1)
+                currentTodo.newProject(domElements.tableProject, items.arrProject)
                 e.preventDefault();
                 projectForm.reset();
                 projectFormDiv.style.display = 'none';
-                currentTodo.newProject(domElements.tableProject, items.arrProjects)
             }
         })
     }

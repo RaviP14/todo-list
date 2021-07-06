@@ -1,17 +1,18 @@
 const items = (() => {
     class todoItem {
-        constructor(title, dueDate, priority, description) {
+        constructor(title, dueDate, priority, description, project) {
             this.title = title
             this.dueDate = dueDate
             this.priority = priority
             this.description = description
+            this.project = project
         }
     }
 
     let arrInbox = []
 
-    function addTodo (title, dueDate, priority, description) {
-        let todo = new todoItem (title, dueDate, priority, description)
+    function addTodo (title, dueDate, priority, description, project) {
+        let todo = new todoItem (title, dueDate, priority, description, project)
         console.log(todo)
         arrInbox.push(todo)
         console.log(arrInbox)
@@ -21,49 +22,28 @@ const items = (() => {
         arrInbox.splice(n, 1)
         console.log(arrInbox)
     }
-    
-    class project {
-        constructor (name, description) {
-            this.name = name
-            this.description = description
-            this.array = []
-        }
 
-        list(item) {
-            this.array.push(item)
-            console.log(this.array)
-        }
+    let arrProject = ['']
 
-        addToList(title, dueDate, priority,description) {
-            let todo = new todoItem (title, dueDate, priority, description)
-            this.list(todo)
-        }
-
-        deleteFromList(n) {
-            this.array.splice(n, 1)
-            console.log(this.array)
-        }
-    }
-    let arrProjects = []
-
-    function addProject (name, description) {
-        let projects = new project (name, description)
-        console.log(projects)
-        arrProjects.push(projects)
+    function addProject (project) {
+        arrProject.push(project);
+        console.log(arrProject);
     }
 
-    function deleteProject(n) {
-        arrProjects.splice(n, 1)
-        console.log(arrProjects)
+    function deleteProject (n) {
+        arrProject.splice(n, 1)
+        console.log(arrProject)
     }
+
+    /* remove project class & functions - add project as this.project on todo class */
 
     return {
         addTodo,
         deleteTodo,
-        addProject,
-        deleteProject,
         arrInbox,
-        arrProjects
+        arrProject,
+        addProject,
+        deleteProject
     }
 })();
 /* n will be assigned to a complete & delete button on each todo 

@@ -7,7 +7,7 @@ console.log(items.arrProjects[0].array) */
 
 domElements.btnAddTodo.addEventListener('click', () => {
     if (domElements.formTodo.length === 0) {
-        domElements.buildFormTodo() //replace with form
+        domElements.buildFormTodo(domElements.tableTodo , items.arrInbox) //replace with form
     } else if (domElements.formDiv.style.display === 'none') {
         domElements.formDiv.style.display = 'block'
     }
