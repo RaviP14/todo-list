@@ -186,13 +186,18 @@ const domElements = (() => {
                 let input1 = inputProjectTitle.value.slice();
                 items.addProject(input1)
                 currentTodo.newProject(domElements.tableProject, items.arrProject)
+                removeForm()
                 e.preventDefault();
                 projectForm.reset();
                 projectFormDiv.style.display = 'none';
             }
         })
     }
-    
+    function removeForm (){
+        while (formTodo.hasChildNodes()) {
+            formTodo.removeChild(formTodo.firstChild)
+        }
+    }
     return {
         formDiv,
         formTodo,
