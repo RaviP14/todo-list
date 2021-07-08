@@ -81,6 +81,7 @@ const domElements = (() => {
         formTodo.appendChild(nameDate);
 
         let inputDate = document.createElement('input');
+        inputDate.type = 'date'
         inputDate.autocomplete = 'off'
         formTodo.appendChild(inputDate);
 
