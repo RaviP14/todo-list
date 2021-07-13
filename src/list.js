@@ -1,4 +1,3 @@
-import { javascript } from "webpack";
 import { domElements } from "./interface";
 import { items } from "./item";
 
