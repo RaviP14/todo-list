@@ -1,3 +1,4 @@
+import { javascript } from "webpack";
 import { domElements } from "./interface";
 import { items } from "./item";
 
@@ -7,6 +8,7 @@ const currentTodo = (() => {
         for (let i = element.rows.length; i < array.length; i++) {
             let row = element.insertRow(i)
             row.setAttribute('data-key', i)
+            row.setAttribute('value', array[i].project)
             for (let j = 0; j < Object.keys(array[i]).length - 2; j++) {
                 let val = row.insertCell()
                 val.textContent = Object.values(array[i])[j];
@@ -53,8 +55,20 @@ const currentTodo = (() => {
     
             let val = row.insertCell()
             let btn = document.createElement('button');
+            btn.value = array[i];
             btn.textContent = array[i];
             val.appendChild(btn);
+            
+            btn.addEventListener('click', () => {
+                let filteredArray = items.arrInbox.filter(function(oneProject){
+                    return oneProject.project == array[i]
+                })
+                console.log(filteredArray);
+                //filter table using row value.
+                for (let j = 0; j < domElements.tableTodo.rows.length; j++) {
+                    console.log(domElements.tableTodo.rows[j])
+                }
+            })
 
             let deleteProject = document.createElement('button');
             deleteProject.textContent = 'X';
