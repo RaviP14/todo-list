@@ -1,6 +1,7 @@
 import { items } from './item'
 import{ domElements } from './interface'
 import { currentTodo } from './list'
+import { format } from 'date-fns'
 /*items.addProject('hello','square')
 items.arrProjects[0].addToList('hello','sammy','11','low')
 console.log(items.arrProjects[0].array) */
@@ -32,6 +33,20 @@ domElements.inboxBtn.addEventListener('click', () => {
     for (let j = 0; j < domElements.tableTodo.rows.length; j++) {
         domElements.tableTodo.rows[j].style.display = 'none';
         if (domElements.tableTodo.rows[j].attributes.value.nodeValue === 'Inbox') {
+            domElements.tableTodo.rows[j].style.display = 'block';
+        }
+    }
+})
+
+domElements.todayBtn.addEventListener('click', () => {
+    let thisDay = new Date()
+    let day1 = String(thisDay.getDate())
+    let month1 = String(thisDay.getMonth())
+    let year1 = thisDay.getFullYear()
+    let today = format(thisDay, 'dd-MM-yyyy')
+    for (let j = 0; j < domElements.tableTodo.rows.length; j++) {
+        domElements.tableTodo.rows[j].style.display = 'none';
+        if (domElements.tableTodo.rows[j].attributes[0].nodeValue === today) {
             domElements.tableTodo.rows[j].style.display = 'block';
         }
     }

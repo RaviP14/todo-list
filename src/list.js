@@ -6,7 +6,7 @@ const currentTodo = (() => {
     function newTodo (element, array) {
         for (let i = element.rows.length; i < array.length; i++) {
             let row = element.insertRow(i)
-            row.setAttribute('data-key', i)
+            row.setAttribute('data-key', array[i].dueDate)
             row.setAttribute('value', array[i].project)
             for (let j = 0; j < Object.keys(array[i]).length - 2; j++) {
                 let val = row.insertCell()
