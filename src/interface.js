@@ -11,6 +11,11 @@ const domElements = (() => {
     sidebar.className = 'sidebar';
     mainDiv.appendChild(sidebar);
 
+    let todoBtn = document.createElement('button');
+    todoBtn.className = 'todoBtn';
+    todoBtn.textContent = 'Todo\'s';
+    sidebar.appendChild(todoBtn);
+
     let inboxBtn = document.createElement('button');
     inboxBtn.className = 'inboxBtn';
     inboxBtn.textContent = 'Inbox';
@@ -138,9 +143,7 @@ const domElements = (() => {
                     currentTodo.newTodo(tables, arrays)
                 } 
             }
-        }) /* Projects aren't added on once form is built,
-        need to delete & rebuild form everytime project is added & deleted
-        check restaurant page. */ 
+        }) 
 
         exit.addEventListener('click', (e) => {
             e.preventDefault();
@@ -209,7 +212,9 @@ const domElements = (() => {
         buildFormProject,
         tableProject,
         projectFormDiv,
-        projectForm
+        projectForm,
+        todoBtn,
+        inboxBtn
     }
 })();
 

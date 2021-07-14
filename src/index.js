@@ -21,5 +21,21 @@ domElements.btnAddProject.addEventListener('click', () => {
         domElements.projectFormDiv.style.display = 'block'
     }
 })
+
+domElements.todoBtn.addEventListener('click', () => {
+    for (let i = 0; i < domElements.tableTodo.rows.length; i++) {
+        domElements.tableTodo.rows[i].style.display = 'block';
+    }
+})
+
+domElements.inboxBtn.addEventListener('click', () => {
+    for (let j = 0; j < domElements.tableTodo.rows.length; j++) {
+        domElements.tableTodo.rows[j].style.display = 'none';
+        if (domElements.tableTodo.rows[j].attributes.value.nodeValue === 'Inbox') {
+            domElements.tableTodo.rows[j].style.display = 'block';
+        }
+    }
+})
+
 /* access each project todo array example items.arrProjects[0].array */
 console.log('todo')

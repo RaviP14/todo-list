@@ -63,10 +63,10 @@ const currentTodo = (() => {
                     return oneProject.project == array[i]
                 })
                 console.log(filteredArray);
-                
+
                 for (let j = 0; j < domElements.tableTodo.rows.length; j++) {
                     domElements.tableTodo.rows[j].style.display = 'none';
-                    if (domElements.tableTodo.rows[j].attributes.value.nodeValue !== array[i]) {
+                    if (domElements.tableTodo.rows[j].attributes.value.nodeValue === array[i]) {
                         domElements.tableTodo.rows[j].style.display = 'block';
                     }
                 }
