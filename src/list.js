@@ -63,9 +63,12 @@ const currentTodo = (() => {
                     return oneProject.project == array[i]
                 })
                 console.log(filteredArray);
-                //filter table using row value.
+                
                 for (let j = 0; j < domElements.tableTodo.rows.length; j++) {
-                    console.log(domElements.tableTodo.rows[j])
+                    domElements.tableTodo.rows[j].style.display = 'none';
+                    if (domElements.tableTodo.rows[j].attributes.value.nodeValue !== array[i]) {
+                        domElements.tableTodo.rows[j].style.display = 'block';
+                    }
                 }
             })
 
