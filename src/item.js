@@ -15,11 +15,20 @@ const items = (() => {
         let todo = new todoItem (title, dueDate, priority, description, project)
         console.log(todo)
         arrInbox.push(todo)
+        localStorage.setItem('myArrInbox', JSON.stringify(arrInbox))
+        console.log(arrInbox)
+    }
+
+    function addOldTodo (title, dueDate, priority, description, project) {
+        let todo = new todoItem (title, dueDate, priority, description, project)
+        console.log(todo)
+        arrInbox.push(todo)
         console.log(arrInbox)
     }
 
     function deleteTodo (n) {
         arrInbox.splice(n, 1)
+        localStorage.setItem('myArrInbox', JSON.stringify(arrInbox))
         console.log(arrInbox)
     }
 
@@ -27,11 +36,17 @@ const items = (() => {
 
     function addProject (project) {
         arrProject.push(project);
+        localStorage.setItem('myArrProject', JSON.stringify(arrProject))
+        console.log(arrProject);
+    }
+    function addOldProject (project) {
+        arrProject.push(project);
         console.log(arrProject);
     }
 
     function deleteProject (n) {
         arrProject.splice(n, 1)
+        localStorage.setItem('myArrProject', JSON.stringify(arrProject))
         console.log(arrProject)
     }
 
@@ -43,7 +58,9 @@ const items = (() => {
         arrInbox,
         arrProject,
         addProject,
-        deleteProject
+        deleteProject,
+        addOldTodo,
+        addOldProject
     }
 })();
 /* n will be assigned to a complete & delete button on each todo 

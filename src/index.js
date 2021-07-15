@@ -4,6 +4,26 @@ import { currentTodo } from './list'
 import { format } from 'date-fns'
 
 const homepage = (() => {
+    document.addEventListener('DOMContentLoaded', () => {
+        let oldTodo = JSON.parse(localStorage.getItem('myArrInbox'))
+        for (let i = 0; i < oldTodo.length; i++) {
+            let input1 = oldTodo[i].title
+            let input2 = oldTodo[i].dueDate
+            let input3 = oldTodo[i].priority
+            let input4 = oldTodo[i].description
+            let input5 = oldTodo[i].project
+            items.addOldTodo(input1, input2, input3, input4, input5)
+        }
+
+        let oldProject  = JSON.parse(localStorage.getItem('myArrProject'))
+        for (let j = 1; j < oldProject.length; j++) {
+            items.addOldProject(oldProject[j])
+        }
+
+        currentTodo.newTodo(domElements.tableTodo , items.arrInbox)
+        currentTodo.newProject(domElements.tableProject, items.arrProject)
+    })
+
     domElements.btnAddTodo.addEventListener('click', () => {
         if (domElements.formTodo.length === 0) {
             domElements.buildFormTodo(domElements.tableTodo , items.arrInbox)
