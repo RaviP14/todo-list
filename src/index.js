@@ -72,12 +72,12 @@ const homepage = (() => {
     
     domElements.thisWeekBtn.addEventListener('click', () => {
         let thisDay = new Date()
-        let firstDay = thisDay.getDate() - thisDay.getDay()
+        let firstDay = thisDay.getDate() - thisDay.getDay() + 1
         let first = new Date(thisDay.setDate(firstDay))
         let starts = format(thisDay, 'dd,MM,yyyy')
     
         let endDay = new Date()
-        let lastDay = firstDay + 6
+        let lastDay = firstDay + 7
         let last = new Date(endDay.setDate(lastDay))
         let ends = format(endDay, 'dd,MM,yyyy')
         
