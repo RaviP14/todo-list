@@ -59,14 +59,9 @@ const currentTodo = (() => {
             val.appendChild(btn);
             
             btn.addEventListener('click', () => {
-                let filteredArray = items.arrInbox.filter(function(oneProject){
-                    return oneProject.project == array[i]
-                })
-                console.log(filteredArray);
-
                 for (let j = 0; j < domElements.tableTodo.rows.length; j++) {
                     domElements.tableTodo.rows[j].style.display = 'none';
-                    if (domElements.tableTodo.rows[j].attributes.value.nodeValue === array[i]) {
+                    if (domElements.tableTodo.rows[j].attributes.value.nodeValue === btn.textContent) {
                         domElements.tableTodo.rows[j].style.display = 'block';
                     }
                 }
@@ -80,12 +75,27 @@ const currentTodo = (() => {
                 if (array.length === 1 && array === items.arrProject) {
                     items.deleteProject(0);
                     element.deleteRow(0);
+                    deleteProjectTodo(btn.textContent)
                 } else if (array === items.arrProject) {
                     items.deleteProject(i);
                     element.deleteRow(i - 1);
+                    deleteProjectTodo(btn.textContent)
                 }
             })
             // need to skip 1 = 0 or items.arrProject[0]
+            function deleteProjectTodo (theProject) {
+                for (let k = 0; k < items.arrInbox.length; k++) {
+                    if (theProject === items.arrInbox[k].project) {
+                        if (items.arrInbox.length === 0) {
+                            items.deleteTodo(0);
+                            domElements.tableTodo.deleteRow(0);
+                        } else {
+                            items.deleteTodo(k);
+                            domElements.tableTodo.deleteRow(k);
+                        }
+                    }
+                }
+            }
         }
     }
 
