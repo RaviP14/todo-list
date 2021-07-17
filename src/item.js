@@ -26,6 +26,16 @@ const items = (() => {
         console.log(arrInbox)
     }
 
+    function editTodo (n, title, dueDate, priority, description, project) {
+        arrInbox[n].title = title
+        arrInbox[n].dueDate = dueDate
+        arrInbox[n].priority = priority
+        arrInbox[n].description = description
+        arrInbox[n].project = project
+        localStorage.setItem('myArrInbox', JSON.stringify(arrInbox))
+        console.log(arrInbox)
+    }
+
     function deleteTodo (n) {
         arrInbox.splice(n, 1)
         localStorage.setItem('myArrInbox', JSON.stringify(arrInbox))
@@ -60,7 +70,8 @@ const items = (() => {
         addProject,
         deleteProject,
         addOldTodo,
-        addOldProject
+        addOldProject,
+        editTodo
     }
 })();
 /* n will be assigned to a complete & delete button on each todo 
