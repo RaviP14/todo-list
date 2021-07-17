@@ -202,6 +202,131 @@ const domElements = (() => {
             formTodo.removeChild(formTodo.firstChild)
         }
     }
+
+    let editFormDiv = document.createElement('div');
+    editFormDiv.className = 'editFormDiv';
+    editFormDiv.style.display = 'none';
+    mainDiv.appendChild(editFormDiv)
+
+    let editFormTodo = document.createElement('form');
+    editFormDiv.appendChild(editFormTodo);
+
+    function buildEditForm (n, arrays) {
+        editFormDiv.style.display = 'block'
+
+        let exit = document.createElement('button');
+        exit.className = 'exitForm';
+        exit.textContent = 'X';
+        editFormTodo.appendChild(exit);
+
+        let nameTitle = document.createElement('p');
+        nameTitle.textContent = 'Title:'
+        editFormTodo.appendChild(nameTitle);
+
+        let inputTitle = document.createElement('input');
+        inputTitle.autocomplete = 'off'
+        inputTitle.value = items.arrInbox[n].title
+        editFormTodo.appendChild(inputTitle);
+
+        let nameDescription = document.createElement('p');
+        nameDescription.textContent ='Description:'
+        editFormTodo.appendChild(nameDescription);
+
+        let inputDescription = document.createElement('input');
+        inputDescription.autocomplete = 'off';
+        inputDescription.value = items.arrInbox[n].description
+        editFormTodo.appendChild(inputDescription);
+
+        let nameDate = document.createElement('p');
+        nameDate.textContent = 'Date:'
+        editFormTodo.appendChild(nameDate);
+
+        let inputDate = document.createElement('input');
+        inputDate.type = 'date'
+        inputDate.autocomplete = 'off'
+        inputDate.value = items.arrInbox[n].dueDate.split('-').reverse().join('-')
+        editFormTodo.appendChild(inputDate);
+
+        let namePriority = document.createElement('p');
+        namePriority.textContent = 'Priority:';
+        editFormTodo.appendChild(namePriority);
+
+        let arrPriority = ['High', 'Medium', 'Low']
+
+        let selectPriorirty = document.createElement('select');
+
+        for (let i =  0; i < arrPriority.length; i++) {
+            let option = document.createElement('option');
+            option.value = arrPriority[i];
+            option.textContent = arrPriority[i];
+            selectPriorirty.appendChild(option);
+        }
+
+        editFormTodo.appendChild(selectPriorirty);
+        
+        for (let k, l = 0; k = selectPriorirty.options[l]; l++) {
+            if (k.value === items.arrInbox[n].priority){
+                selectPriorirty.selectedIndex = l
+                break
+            }
+        }
+
+        let nameChooseProject = document.createElement('p');
+        nameChooseProject.textContent = 'Choose Project';
+        editFormTodo.appendChild(nameChooseProject);
+
+        let chooseProject = document.createElement('select');
+
+        for (let j =  0; j < items.arrProject.length; j++) {
+            let option = document.createElement('option');
+            option.value = items.arrProject[j];
+            option.textContent = items.arrProject[j];
+            chooseProject.appendChild(option);
+        }
+        editFormTodo.appendChild(chooseProject);
+
+        for (let x, y = 0; x = chooseProject.options[y]; y++) {
+            if (x.value === items.arrInbox[n].project) {
+                chooseProject.selectedIndex = y
+                break
+            }
+        }
+
+        let submit = document.createElement('button');
+        submit.className = 'submitForm';
+        submit.textContent = 'Submit';
+        editFormTodo.appendChild(submit);
+
+        function removeEditForm (){
+            while (editFormTodo.hasChildNodes()) {
+                editFormTodo.removeChild(editFormTodo.firstChild)
+            }
+        }
+
+        submit.addEventListener('click', (e) => {
+            if (inputTitle.value !== '' && inputDate !== '') {
+                let input1 = inputTitle.value.slice();
+                let input2 = inputDate.value.slice().split('-').reverse().join('-');
+                let input3 = selectPriorirty.value.slice();
+                let input4 = inputDescription.value.slice();
+                let input5 = chooseProject.value.slice();
+                console.log(chooseProject.value)
+                if (arrays = items.arrInbox) {
+                    items.editTodo(n,input1, input2, input3, input4, input5);
+                    currentTodo.editTodoTable(n)
+                    e.preventDefault();
+                    editFormTodo.reset();
+                    removeEditForm();                    
+                } 
+            }
+        }) 
+
+        exit.addEventListener('click', (e) => {
+            e.preventDefault();
+            editFormTodo.reset();
+            removeEditForm();
+        })
+    }
     return {
         formDiv,
         formTodo,
@@ -216,7 +341,10 @@ const domElements = (() => {
         todoBtn,
         inboxBtn,
         todayBtn,
-        thisWeekBtn
+        thisWeekBtn,
+        buildEditForm,
+        editFormDiv,
+        editFormTodo
     }
 })();
 
