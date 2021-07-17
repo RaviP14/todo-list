@@ -93,6 +93,7 @@ const currentTodo = (() => {
 
             let deleteProject = document.createElement('button');
             deleteProject.textContent = 'X';
+            deleteProject.title = 'Delete project & Todo\'s';
             let val2 = row.insertCell();
             val2.appendChild(deleteProject);
             deleteProject.addEventListener('click', () => {
