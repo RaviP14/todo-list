@@ -11,13 +11,15 @@ const currentTodo = (() => {
             for (let j = 0; j < Object.keys(array[i]).length - 2; j++) {
                 let val = row.insertCell()
                 val.textContent = Object.values(array[i])[j];
+                val.id = Object.keys(array[i])[j] + i
             }
 
             let infoBtn = document.createElement('button');
             infoBtn.textContent = 'i'
 
             let info = document.createElement('span');
-            info.textContent = array[i].description 
+            info.textContent = array[i].description
+            info.id = Object.keys(array[i])[3] + i
             info.style.display = 'none'
 
             let val3 = row.insertCell();
@@ -28,6 +30,16 @@ const currentTodo = (() => {
             })
             infoBtn.addEventListener('mouseout', () => {
                 info.style.display = 'none'
+            })
+            let editBtn = document.createElement('button');
+            editBtn.textContent = 'Edit'
+            let val4 = row.insertCell()
+            val4.appendChild(editBtn)
+
+            editBtn.addEventListener('click', () => {
+                if (domElements.editFormTodo.length === 0) {
+                    domElements.buildEditForm(i, array)
+                }
             })
 
             let completeBtn = document.createElement('button');
@@ -44,6 +56,18 @@ const currentTodo = (() => {
                 } 
             })
         }
+    }
+
+    function editTodoTable(n) {
+        let title = document.getElementById('title' + n) 
+        let dueDate = document.getElementById('dueDate' + n)
+        let priority = document.getElementById('priority' + n)
+        let description = document.getElementById('description' + n)
+
+        title.textContent = items.arrInbox[n].title
+        dueDate.textContent = items.arrInbox[n].dueDate
+        priority.textContent = items.arrInbox[n].priority
+        description.textContent = items.arrInbox[n].description
     }
 
     function newProject (element, array) {
@@ -101,7 +125,8 @@ const currentTodo = (() => {
 
     return {
         newTodo,
-        newProject
+        newProject,
+        editTodoTable
     }
 })();
 
