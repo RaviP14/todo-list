@@ -44,6 +44,7 @@ const domElements = (() => {
     sidebar.appendChild(btnAddProject);
 
     let btnAddTodo = document.createElement('button');
+    btnAddTodo.className = 'addTask'
     btnAddTodo.textContent = 'Add Task';
     mainDiv.appendChild(btnAddTodo);
 
