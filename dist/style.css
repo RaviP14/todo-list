@@ -1,10 +1,22 @@
-.addTask {
-    margin-left: 25%;
+.titlesDiv {
+    text-align: center;
+    width: 100%;
 }
+
+.addTask {
+    margin-left: 15%;
+    border: none;
+    background-color: lightblue ;
+}
+
+.addTask:hover {
+    background-color: green;
+    color: #ffffff;
+} 
 
 .sidebar {
     height: 100%;
-    width: 25%;
+    min-width: 10%;
     position: fixed;
     top: 0;
     left: 0;
@@ -21,12 +33,19 @@
     border: none;
 }
 .sidebar button {
-    
     text-align: center;
+}
+
+.sidebar button:hover {
+    background-color: green;
+    color: #ffffff;
+}
+
+.sidebar p {
+    text-decoration: underline;
 }
 .tableprojects {
     width: 100%;
-    border: 1px solid black;
     border-collapse: collapse;
     display: table;
     position: relative;
@@ -56,12 +75,33 @@
     width: 100%;
     background: none;
     border: none;
-    background-color: red;
-    
+}
+
+.tableprojects button:hover {
+    background-color: lightcoral;
+    color: #ffffff;
 }
 
 .tableTodo {
-    margin-top: 10%;
-    margin-left: 25%;
-    width: 100%;
+    margin-top: 5%;
+    margin-left: 15%;
+    margin-right: auto;
+    width: 80%;
+    border-collapse: collapse;
+    table-layout: fixed;
+}
+
+.tableTodo tr {
+    background-color: white;
+    text-align: start;
+}
+
+.tableTodo tr:hover {
+    background-color: lightgreen;
+}
+
+.tableTodo td {
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid rgb(202, 194, 194);
 }
