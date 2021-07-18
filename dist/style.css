@@ -1,0 +1,67 @@
+.addTask {
+    margin-left: 25%;
+}
+
+.sidebar {
+    height: 100%;
+    width: 25%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    padding-top: 60px;
+    background-color: lightblue;
+}
+
+.sidebar > * {
+    padding: 8px 8px 8px 8px;
+    text-decoration: none;
+    display: block;
+    width: 100%;
+    background: none;
+    border: none;
+}
+.sidebar button {
+    
+    text-align: center;
+}
+.tableprojects {
+    width: 100%;
+    border: 1px solid black;
+    border-collapse: collapse;
+    display: table;
+    position: relative;
+}
+.tableprojects > * {
+    margin: 0%;
+}
+
+.tableprojects tbody {
+    display: inline-block;
+    width: 100%;
+    
+}
+
+.tableprojects tr {
+    display: inline-block;
+    width: 100%;
+}
+
+.tableprojects td{
+    width: 100%;
+}
+.tableprojects button {
+    display: block;
+    text-align: center;
+    box-sizing: border-box;
+    width: 100%;
+    background: none;
+    border: none;
+    background-color: red;
+    
+}
+
+.tableTodo {
+    margin-top: 10%;
+    margin-left: 25%;
+    width: 100%;
+}
