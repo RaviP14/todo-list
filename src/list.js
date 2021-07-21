@@ -15,11 +15,13 @@ const currentTodo = (() => {
             }
 
             let infoBtn = document.createElement('button');
+            infoBtn.className = 'tooltip'
             infoBtn.textContent = 'i'
 
             let info = document.createElement('span');
             info.textContent = array[i].description
             info.id = Object.keys(array[i])[3] + i
+            info.className = 'tooltiptext'
             info.style.display = 'none'
 
             let val3 = row.insertCell();
