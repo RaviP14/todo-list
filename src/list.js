@@ -34,6 +34,7 @@ const currentTodo = (() => {
                 info.style.display = 'none'
             })
             let editBtn = document.createElement('button');
+            editBtn.className = 'editBtn'
             editBtn.textContent = 'Edit'
             let val4 = row.insertCell()
             val4.appendChild(editBtn)
@@ -45,6 +46,7 @@ const currentTodo = (() => {
             })
 
             let completeBtn = document.createElement('button');
+            completeBtn.className = 'completeBtn'
             completeBtn.textContent = 'Complete'
             let val2 = row.insertCell()
             val2.appendChild(completeBtn)

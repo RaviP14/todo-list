@@ -1,5 +1,5 @@
 .titlesDiv {
-    z-index: 2;
+    z-index: 1;
     top: 0;
     left: 0;
     text-align: center;
@@ -13,11 +13,20 @@
     margin-left: 15%;
     border: none;
     background-color: lightblue ;
+    padding: 0.3em 1.2em;
+    border: 0.16em solid rgba(255,255,255,0);
+    box-sizing: border-box;
+    text-decoration: none;
+    font-family: 'roberto', sans-serif;
+    font-weight: 300;
+    color: #000000;
+    text-shadow: 0 0.04em 0.04em rgb(0,0,0,0.35);
+    text-align: center;
+    transition: all 0.2s;
 }
 
 .addTask:hover {
-    background-color: green;
-    color: #ffffff;
+    border-color: rgb(31, 31, 31);
 } 
 
 .sidebar {
@@ -43,11 +52,21 @@
 }
 .sidebar button {
     text-align: center;
+    padding: 0.3em 1.2em;
+    margin: 0 0.1em 0.1em 0;
+    border: 0.16em solid rgba(255,255,255,0);
+    box-sizing: border-box;
+    text-decoration: none;
+    font-family: 'roberto', sans-serif;
+    font-weight: 300;
+    color: #000000;
+    text-shadow: 0 0.04em 0.04em rgb(0,0,0,0.35);
+    text-align: center;
+    transition: all 0.2s;
 }
 
 .sidebar button:hover {
-    background-color: green;
-    color: #ffffff;
+    border-color: rgb(255, 255, 255, 1);
 }
 
 .sidebar p {
@@ -85,12 +104,22 @@
     box-sizing: border-box;
     width: 100%;
     background: none;
-    border: none;
+    padding: 0.3em 1.2em;
+    margin: 0 0.1em 0.1em 0;
+    border: 0.16em solid rgba(255,255,255,0);
+    text-decoration: none;
+    font-family: 'roberto', sans-serif;
+    font-weight: 300;
+    color: #000000;
+    text-shadow: 0 0.04em 0.04em rgb(0,0,0,0.35);
+    text-align: center;
+    transition: all 0.2s;
 }
 
 .tableprojects button:hover {
     background-color: lightcoral;
     color: #ffffff;
+    border-color: rgb(255, 255, 255, 1);
 }
 
 .tableTodo {
@@ -122,6 +151,22 @@
     position: relative;
     display: inline-block;
     text-align: center;
+    padding: 0.35em 1.2em;
+    border: 0.1em solid #000000;
+    margin: 0 0.3em 0.3em 0;
+    border-radius: 0.12em;
+    box-sizing: border-box;
+    text-decoration: none;
+    font-family: 'roberto', sans-serif;
+    font-weight: 300;
+    color: #000000;
+    transition: all 0.2s;
+    background-color: #ffffff;
+}
+
+.tooltip:hover {
+    color: #ffffff;
+    background-color: #000000;
 }
 
 .tooltiptext {
@@ -138,6 +183,31 @@
     border-right: 5px solid transparent;
     border-bottom: 5px solid transparent;
     border-left: 5px solid transparent;
+}
+
+.editBtn, .completeBtn{
+    display: inline-block;
+    padding: 0.3em 1.2em;
+    margin: 0 0.1em 0.1em 0;
+    border: 0.16em solid rgba(255,255,255,0);
+    box-sizing: border-box;
+    text-decoration: none;
+    font-family: 'roberto', sans-serif;
+    font-weight: 300;
+    color: #ffffff;
+    text-shadow: 0 0.04em 0.04em rgb(0,0,0,0.35);
+    text-align: center;
+    transition: all 0.2s;
+}
+.editBtn:hover, .completeBtn:hover {
+    border-color: rgb(255, 255, 255, 1);
+}
+.editBtn{
+    background-color: rgb(78, 157, 184);
+}
+
+.completeBtn {
+    background-color: rgb(19, 151, 100);
 }
 
 .formDiv, .editFormDiv {
@@ -158,7 +228,7 @@
     padding: 20px;
     border: 2px solid #888;
     border-radius: 5px 5px 5px 5px;
-    width: 40%;
+    max-width: 400px;
 }
 
 .exitForm {
@@ -218,12 +288,13 @@
 }
 .chooseProject, .selectPriority {
     background-color: white;
-    border: 1px solid black
+    border: 1px solid black;
+    margin-right: 2%;
 }
 
 .submitForm {
     float: right;
-    margin-top: 8%;
+    margin-top: 6%;
     background-color: lightgreen;
     border: 1px solid lightgray;
     border-radius: 5px 5px 5px 5px;
@@ -262,13 +333,14 @@
     background-color: lightcoral;
     color: #ffffff;
     border: none;
-    border-radius: 5px 5px 5px 5px;
-    padding: 1px;
+    border-radius: 0.5em;
+    padding: 0.3em 0.3em !important;
     float: left;
 }
 .Cancel:hover,
 .Cancel:focus {
     background-color: crimson !important;
+    color: seashell !important;
     text-decoration: none;
     cursor: pointer;
 }
@@ -277,8 +349,8 @@
     float: right;
     background-color: lightgreen;
     border: none;
-    border-radius: 5px 5px 5px 5px;
-    padding: 2px;
+    border-radius: 0.5em;
+    padding: 0.4em 0.6em !important;
 }
 
 .submitProjectForm:hover,
