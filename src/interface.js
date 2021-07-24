@@ -342,7 +342,8 @@ const domElements = (() => {
                     currentTodo.editTodoTable(n)
                     e.preventDefault();
                     editFormTodo.reset();
-                    removeEditForm();                    
+                    removeEditForm();
+                    editFormDiv.style.display = 'none';                    
                 } 
             }
         }) 

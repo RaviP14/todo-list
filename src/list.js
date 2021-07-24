@@ -89,7 +89,7 @@ const currentTodo = (() => {
             btn.addEventListener('click', () => {
                 for (let j = 0; j < domElements.tableTodo.rows.length; j++) {
                     domElements.tableTodo.rows[j].style.display = 'none';
-                    if (domElements.tableTodo.rows[j].attributes.value.nodeValue === btn.textContent) {
+                    if (items.arrInbox[j].project === btn.textContent) {
                         domElements.tableTodo.rows[j].style.display = 'table-row';
                     }
                 }
