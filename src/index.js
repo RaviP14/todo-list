@@ -43,7 +43,7 @@ const homepage = (() => {
     
     domElements.todoBtn.addEventListener('click', () => {
         for (let i = 0; i < domElements.tableTodo.rows.length; i++) {
-            domElements.tableTodo.rows[i].style.display = 'block';
+            domElements.tableTodo.rows[i].style.display = 'table-row';
         }
     })
     
@@ -51,7 +51,7 @@ const homepage = (() => {
         for (let j = 0; j < domElements.tableTodo.rows.length; j++) {
             domElements.tableTodo.rows[j].style.display = 'none';
             if (domElements.tableTodo.rows[j].attributes.value.nodeValue === 'Inbox') {
-                domElements.tableTodo.rows[j].style.display = 'block';
+                domElements.tableTodo.rows[j].style.display = 'table-row';
             }
         }
     })
@@ -65,7 +65,7 @@ const homepage = (() => {
         for (let j = 0; j < domElements.tableTodo.rows.length; j++) {
             domElements.tableTodo.rows[j].style.display = 'none';
             if (domElements.tableTodo.rows[j].attributes[0].nodeValue === today) {
-                domElements.tableTodo.rows[j].style.display = 'block';
+                domElements.tableTodo.rows[j].style.display = 'table-row';
             }
         }
     })
@@ -86,7 +86,7 @@ const homepage = (() => {
             let current = domElements.tableTodo.rows[j].attributes[0].nodeValue
             
             if (current > starts && current < ends) {
-                domElements.tableTodo.rows[j].style.display = 'block';
+                domElements.tableTodo.rows[j].style.display = 'table-row';
             }
         }
     })

@@ -143,7 +143,7 @@ const domElements = (() => {
             if (inputTitle.value !== '' && inputDate !== '') {
                 let input1 = inputTitle.value.slice();
                 let input2 = inputDate.value.slice().split('-').reverse().join('-');
-                let input3 = selectPriorirty.value.slice();
+                let input3 = selectPriority.value.slice();
                 let input4 = inputDescription.value.slice();
                 let input5 = chooseProject.value.slice();
                 console.log(chooseProject.value)
@@ -333,7 +333,7 @@ const domElements = (() => {
             if (inputTitle.value !== '' && inputDate !== '') {
                 let input1 = inputTitle.value.slice();
                 let input2 = inputDate.value.slice().split('-').reverse().join('-');
-                let input3 = selectPriorirty.value.slice();
+                let input3 = selectPriority.value.slice();
                 let input4 = inputDescription.value.slice();
                 let input5 = chooseProject.value.slice();
                 console.log(chooseProject.value)
