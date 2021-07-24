@@ -175,10 +175,12 @@ const domElements = (() => {
 
     function buildFormProject() {
         let projectTitle = document.createElement('p');
+        projectTitle.className = 'projectTitle'
         projectTitle.textContent = 'Title:'
         projectForm.appendChild(projectTitle);
 
         let inputProjectTitle = document.createElement('input');
+        inputProjectTitle.className = 'inputProjectTitle'
         inputProjectTitle.autocomplete = 'off'
         projectForm.appendChild(inputProjectTitle);
 
@@ -188,7 +190,7 @@ const domElements = (() => {
         projectForm.appendChild(cancel);
 
         let submitProject = document.createElement('button');
-        submitProject.className = 'submitForm';
+        submitProject.className = 'submitProjectForm';
         submitProject.textContent = 'Submit';
         projectForm.appendChild(submitProject);
 

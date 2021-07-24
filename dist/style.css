@@ -17,6 +17,7 @@
 .sidebar {
     height: 100%;
     min-width: 10%;
+    max-width: 15%;
     position: fixed;
     top: 0;
     left: 0;
@@ -43,6 +44,8 @@
 
 .sidebar p {
     text-decoration: underline;
+    text-align: center;
+    width: auto;
 }
 .tableprojects {
     width: 100%;
@@ -219,9 +222,60 @@
 }
 
 .submitForm:hover,
-.exitForm:focus {
+.submitForm:focus {
     background-color: green;
     color: white;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.projectFormDiv {
+    position: relative;
+    width: auto;
+}
+
+.projectForm {
+    width: 100%;
+}
+
+.projectTitle {
+    display: inline-block;
+    margin-right: 4%;
+}
+
+.inputProjectTitle {
+    display: inline-block;
+    width: 60%;
+    overflow: hidden;
+}
+
+.Cancel {
+    background-color: lightcoral;
+    color: #ffffff;
+    border: none;
+    border-radius: 5px 5px 5px 5px;
+    padding: 1px;
+    float: left;
+}
+.Cancel:hover,
+.Cancel:focus {
+    background-color: crimson !important;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.submitProjectForm {
+    float: right;
+    background-color: lightgreen;
+    border: none;
+    border-radius: 5px 5px 5px 5px;
+    padding: 2px;
+}
+
+.submitProjectForm:hover,
+.submitProjectForm:focus {
+    background-color: seagreen !important;
+    color: seashell !important;
     text-decoration: none;
     cursor: pointer;
 }
