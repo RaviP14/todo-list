@@ -1,18 +1,24 @@
+body {
+    background-color: #f5f5f5;
+    font-family: sans-serif;
+}
+
 .titlesDiv {
     z-index: 1;
     top: 0;
     left: 0;
     text-align: center;
     width: 100%;
-    background-color: turquoise;
+    background-color: #33415C;
     position: absolute;
+    color: #fff;
 }
 
 .addTask {
     margin-top: 10%;
-    margin-left: 15%;
+    margin-left: 16%;
     border: none;
-    background-color: lightblue ;
+    background-color: #979DAC ;
     padding: 0.3em 1.2em;
     border: 0.16em solid rgba(255,255,255,0);
     box-sizing: border-box;
@@ -39,7 +45,9 @@
     top: 0;
     left: 0;
     padding-top: 60px;
-    background-color: lightblue;
+    background-color: #5C677D;
+    color: #ffffff;
+    font-family: sans-serif;
 }
 
 .sidebar > * {
@@ -63,6 +71,7 @@
     text-shadow: 0 0.04em 0.04em rgb(0,0,0,0.35);
     text-align: center;
     transition: all 0.2s;
+    color: #ffffff
 }
 
 .sidebar button:hover {
@@ -110,21 +119,21 @@
     text-decoration: none;
     font-family: 'roberto', sans-serif;
     font-weight: 300;
-    color: #000000;
+    color: #ffffff;
     text-shadow: 0 0.04em 0.04em rgb(0,0,0,0.35);
     text-align: center;
     transition: all 0.2s;
 }
 
 .tableprojects button:hover {
-    background-color: lightcoral;
+    background-color: #0353A4;
     color: #ffffff;
     border-color: rgb(255, 255, 255, 1);
 }
 
 .tableTodo {
     margin-top: 5%;
-    margin-left: 15%;
+    margin-left: 16%;
     margin-right: auto;
     width: 80%;
     border-collapse: collapse;
@@ -133,12 +142,12 @@
 }
 
 .tableTodo tr {
-    background-color: white;
+    background-color: #f5f5f5;
     text-align: start;
 }
 
 .tableTodo tr:hover {
-    background-color: lightgreen;
+    background-color: #979DAC;
 }
 
 .tableTodo td {
@@ -203,11 +212,11 @@
     border-color: rgb(255, 255, 255, 1);
 }
 .editBtn{
-    background-color: rgb(78, 157, 184);
+    background-color: #5C677D;
 }
 
 .completeBtn {
-    background-color: rgb(19, 151, 100);
+    background-color: #0353A4;
 }
 
 .formDiv, .editFormDiv {
@@ -223,7 +232,7 @@
 }
 
 .formTodo, .editFormTodo {
-    background-color: #f5f5f5;
+    background-color: #979DAC;
     margin: 15% auto;
     padding: 20px;
     border: 2px solid #888;
@@ -233,8 +242,8 @@
 
 .exitForm {
     float: right;
-    color: #aaa;
-    background-color: #f5f5f5;
+    color: #ffffff;
+    background-color: #979DAC;
     border: none;
     font-size: 28px;
     font-weight: bold;
@@ -295,16 +304,17 @@
 .submitForm {
     float: right;
     margin-top: 6%;
-    background-color: lightgreen;
-    border: 1px solid lightgray;
+    background-color: #40916c;
+    border: 0.16em solid rgba(255,255,255,0);
     border-radius: 5px 5px 5px 5px;
     padding: 5px 5px 5px 5px;
 }
 
 .submitForm:hover,
 .submitForm:focus {
-    background-color: green;
+    background-color: #1b4332;
     color: white;
+    border-color: rgb(255, 255, 255, 1);
     text-decoration: none;
     cursor: pointer;
 }
@@ -330,16 +340,17 @@
 }
 
 .Cancel {
-    background-color: lightcoral;
+    background-color: #d00000;
     color: #ffffff;
-    border: none;
+    border:  0.16em solid rgba(255,255,255,0);;
     border-radius: 0.5em;
     padding: 0.3em 0.3em !important;
-    float: left;
+    
 }
 .Cancel:hover,
 .Cancel:focus {
-    background-color: crimson !important;
+    background-color: #9d0208 !important;
+    border-color: rgb(255, 255, 255, 1);
     color: seashell !important;
     text-decoration: none;
     cursor: pointer;
@@ -347,15 +358,16 @@
 
 .submitProjectForm {
     float: right;
-    background-color: lightgreen;
-    border: none;
+    background-color: #40916c;
+    border:  0.16em solid rgba(255,255,255,0);
     border-radius: 0.5em;
     padding: 0.4em 0.6em !important;
 }
 
 .submitProjectForm:hover,
 .submitProjectForm:focus {
-    background-color: seagreen !important;
+    background-color: #1b4332 !important;
+    border-color: rgb(255, 255, 255, 1);
     color: seashell !important;
     text-decoration: none;
     cursor: pointer;
