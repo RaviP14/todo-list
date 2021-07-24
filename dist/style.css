@@ -1,9 +1,15 @@
 .titlesDiv {
+    z-index: 2;
+    top: 0;
+    left: 0;
     text-align: center;
     width: 100%;
+    background-color: turquoise;
+    position: absolute;
 }
 
 .addTask {
+    margin-top: 10%;
     margin-left: 15%;
     border: none;
     background-color: lightblue ;
@@ -15,6 +21,8 @@
 } 
 
 .sidebar {
+    z-index: 0;
+    margin-top: 3%;
     height: 100%;
     min-width: 10%;
     max-width: 15%;
