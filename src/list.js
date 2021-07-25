@@ -2,7 +2,7 @@ import { domElements } from "./interface";
 import { items } from "./item";
 
 const currentTodo = (() => {
-    //add desired table & array to add new todo
+    //add desired table(element) & array to add new todo
     function newTodo (element, array) {
         for (let i = element.rows.length; i < array.length; i++) {
             let row = element.insertRow(i)
@@ -111,7 +111,7 @@ const currentTodo = (() => {
                     deleteProjectTodo(btn.textContent)
                 }
             })
-            // need to skip 1 = 0 or items.arrProject[0]
+
             function deleteProjectTodo (theProject) {
                 for (let k = 0; k < items.arrInbox.length; k++) {
                     if (theProject === items.arrInbox[k].project) {

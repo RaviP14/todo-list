@@ -146,7 +146,6 @@ const domElements = (() => {
                 let input3 = selectPriority.value.slice();
                 let input4 = inputDescription.value.slice();
                 let input5 = chooseProject.value.slice();
-                console.log(chooseProject.value)
                 if (arrays = items.arrInbox) {
                     items.addTodo(input1, input2, input3, input4, input5);
                     e.preventDefault();
@@ -336,7 +335,6 @@ const domElements = (() => {
                 let input3 = selectPriority.value.slice();
                 let input4 = inputDescription.value.slice();
                 let input5 = chooseProject.value.slice();
-                console.log(chooseProject.value)
                 if (arrays = items.arrInbox) {
                     items.editTodo(n,input1, input2, input3, input4, input5);
                     currentTodo.editTodoTable(n)

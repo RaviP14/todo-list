@@ -58,9 +58,6 @@ const homepage = (() => {
     
     domElements.todayBtn.addEventListener('click', () => {
         let thisDay = new Date()
-        /*let day1 = String(thisDay.getDate())
-        let month1 = String(thisDay.getMonth())
-        let year1 = thisDay.getFullYear()*/
         let today = format(thisDay, 'dd-MM-yyyy')
         for (let j = 0; j < domElements.tableTodo.rows.length; j++) {
             domElements.tableTodo.rows[j].style.display = 'none';
